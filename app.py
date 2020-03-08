@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.automap import automap_base
 from flask import Flask, jsonify
-
+import os
 
 #path of sqlite file goes here in relation to current file
 db_path = 'data/hawaii.sqlite'
@@ -149,5 +149,6 @@ def range(start, end):
 
 #set debug to True for troubleshooting, keep troubleshooting code out of production
 if __name__ == '__main__':
-    app.run(debug=False)
-
+    # Bind to PORT if defined, otherwise default to 5000.
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
