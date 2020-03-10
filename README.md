@@ -60,6 +60,20 @@ The goal of this project was to create a flask app API that will query a SQLite 
 
 12. Review results from step 11 above to determine if the null hypothesis can be rejected
 
+## Flask API endpoints
+
+### Base Route
+
+1. Define a route and corresponding function that returns text listing all of the API endpoints
+
+### Static Routes
+
+#### How much precipitation did Hawaii get during the last year of my dataset?
+
+1. Define flask route and corresponding function
+
+2. within the function defined in step 1 above, connect to the DB, **continue here
+
 
 ## API/flask endpoints
 
