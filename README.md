@@ -1,8 +1,12 @@
-# API for weather data
+# API for Hawaii weather data
 
-## Goals
+The goal of this project was to create a flask app API that will query a SQLite database to retun weather data in Hawaii. The data is stored in a SQLite database, while SQLAlchemy was utilized to retreive and manipulate the data within the flask app. Analysis of the data, including visualizations was completed using Python libraries Pandas, Numpy and Matplotlib in a Jupyter Notebook. 
 
-In this project, I wanted to create a flask app API that will query a SQLite database to return weather data in Hawaii.
+## Analysis Questions
+
+1. How much precipitation did Hawaii get during the last year of my dataset?
+
+2. Which weather stations had the most weather observations?
 
 ## API/flask endpoints
 
@@ -11,3 +15,6 @@ Each route I created (except the base route) utilized SQLAlchemy to query a SQLi
 ## Deployment
 
 I deployed my flask app at https://weather-api-492.herokuapp.com 
+
+
+
