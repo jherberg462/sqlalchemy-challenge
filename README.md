@@ -54,7 +54,7 @@ The goal of this project was to create a flask app API that will query a SQLite 
 
 9. Create two DB queries that find the Weather Station ID, and the average observed tempeture, grouped by the Weather Station ID, one that filters by the measurement date being in June, and one that filters by the measurement date being in December
 
-10. Create a for loop that loops through the results of both queries in step 9 above, and appends the average observed tempeture into a list. 
+10. Run a for loop that loops through the results of both queries in step 9 above, and appends the average observed tempeture into a list. 
 
 11. Run a t-test to determine if the tempetures in December are the same as the tempetures as in June. 
 
@@ -68,20 +68,84 @@ The goal of this project was to create a flask app API that will query a SQLite 
 
 ### Static Routes
 
-#### How much precipitation did Hawaii get during the last year of my dataset?
+#### How much precipitation did Hawaii get each date in my dataset?
 
 1. Define flask route and corresponding function
 
-2. within the function defined in step 1 above, connect to the DB, **continue here
+Within the function defined in step 1 above:
+
+2. Connect to the DB, query the DB to find the date and precipitation amount, and close the connection to the DB.
+
+3. Create an empty list to store the results. 
+
+4. Run a for loop that loops through the results from step 2 above, that will check if the precipitation value is 'None', if so, set the value of a second precipitation variable (with a minor spelling difference) ("2nd Precipitation Variable") to "0.0", and if not, set the 2nd Precipitation Variable to the precipitation result. Next the for loop will create an empty dictionary, set the date value of the result to the key,  the value of the 2nd Precipitation Variable to the value, and append the dictionary to the list created in step 3 above.
+
+5. Return the list created in step 3 above after passing it through the jsonify function from the flask library.
+
+#### Which weather stations had the most weather observations?
+
+1. Define flask route and corresponding function
+
+Within the function defined in step 1 above:
+
+2. Connect to the DB, query the DB to find the unique Weather Stations IDs, grouped by the Weather Station ID, and ordered by the count of the Weather Station ID.
+
+3. Flatten the result in step 2 above into a 1-dimensional array, and transform it into a list.
+
+4. Return the list created in step 3 above after passing it through the jsonify function from the flask library
+
+#### What are the tempeture observations recorded in the last year of my dataset? 
+
+1. Define flask route and corresponding function
+
+Within the function defined in step 1 above:
+
+2. Connect to the DB, query the DB to find the latest date in the dataset and save the result to a variable. Use datetime.timedelta to calculate 365 days (one year) before the aforementioned result, and save this value to a varaible. 
+
+3. Query the DB to find the date and observed tempeture, filtering date values greater than or equal to the last variable defined in step 2, and close the connection to the DB.
+
+4. Create empty list to store results. 
+
+5. Run a for loop that loops through the results from step 3 above that creates an empty dictionary, saves the date result for each result as the key and the observed tempeture as the value, and appends the dictionary to the list created in step 4 above.
+
+6. Return the list created in step 4 above after passing it through the jsonify function from the flask library
+
+### Dynamic Routes
+
+1. Define flask route and corresponding function
+
+Within the function defined in step 1 above:
+
+2. Check if each input variable is in yyyy-mm-dd format, if not return a pre-defined error message, and if in the appropiate format, move on to step 3 below.
+
+3. Connect to the DB, query the DB to find the minimum, maximum and average observed tempeture, and the date, grouping by the date, filtering by dates greater than or equal to the first input variable (if applicable: and less than or equal to the second input variable) and close the connection to the DB. 
+
+4. Create an empty list for the results.
+
+5. Run a for loop that loops through the results from step 3 above that creates two empty dictionaries. The first dictionary will have keys of 'min_temp', 'max_temp', and 'average_temp' and their respective values will be the values from the result. The first dictionary will be passed into the second dictionary with the date being the key and the first dictionary being the value. The second dictionary will be passed into the list created in step 4 above. 
+
+6. Return the list created in step 4 above after passing it through the jsonify function from the flask library.
 
 
-## API/flask endpoints
-
-Each route I created (except the base route) utilized SQLAlchemy to query a SQLite database. The base route displays a list of available routes. I created routes that return each dates precipitation, a list of weather stations used to gather data, and tempeture observations by date. I also created additional routes that will filter tempeture observations both by being after an input date, and between two input dates. 
-
-## Deployment
+### Deployment
 
 I deployed my flask app at https://weather-api-492.herokuapp.com 
 
+## Results
 
+### Precipitation from the last year in my dataset
+
+**todo -- update notebook to save image, and insert saved image here
+
+### Weather stations
+
+**todo -- save screenshot of this output and insert saved image here
+
+### Frequency of tempeture observations
+
+**todo -- update notebook to save image, and insert image here
+
+### Comparing June and December tempetures
+
+**todo -- save screenshot of this block of code, and corresponding output, and insert saved image here
 
