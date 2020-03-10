@@ -16,6 +16,49 @@ The goal of this project was to create a flask app API that will query a SQLite 
 
 ### Base Route
 
+1. List of all available routes
+
+### Static Routes
+
+1. How much precipitation did Hawaii receive each day in my dataset?
+
+2. Which weather stations are providing data in my dataset? 
+
+3. What are the tempeture observations recorded in the last year of my dataset? 
+
+### Dynamic Routes
+
+1. What are the minimum, maximum and average tempetures from a given start date through the last date in my dataset?
+
+2. What are the minimum, maximum and average tempetures in a given date range? 
+
+## Tasks
+
+### Analysis questions
+
+1. Connect to SQLite Database ("DB") using SQLAlchemy, and reflect the tables.
+
+2. Calculate the latest date in my dataset, and use this to calculate the last year in my dataset.
+
+3. Use SQLAlchemy to query DB to find the amount of precipitation and the date, filterd by the date range in step 2 above. 
+
+4. Plot results from step 3 above into a Matplotlib chart
+
+5. Use SQLAlchemy to query DB to find the Weather Station ID, and how many rows each Weather Station ID appears in, and order the results by how many rows each Weather Station ID appears in. 
+
+6. Modify the query in step 6 above to return only the first result, and save only the Weather Station ID into a variable
+
+7. Use SQLAlchemy to query the DB to find the date and tempature, filtered by the Weather Station ID found in step 6 above, and by the date range found in step 2 above. 
+
+8. Use Matplotlib to show the tempeture and frequency of the tempeture, grouped into 12 bins. 
+
+9. Create two DB queries that find the Weather Station ID, and the average observed tempeture, grouped by the Weather Station ID, one that filters by the measurement date being in June, and one that filters by the measurement date being in December
+
+10. Create a for loop that loops through the results of both queries in step 9 above, and appends the average observed tempeture into a list. 
+
+11. Run a t-test to determine if the tempetures in December are the same as the tempetures as in June. 
+
+12. Review results from step 11 above to determine if the null hypothesis can be rejected
 
 
 ## API/flask endpoints
