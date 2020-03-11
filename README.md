@@ -135,17 +135,17 @@ I deployed my flask app at https://weather-api-492.herokuapp.com
 
 ### Precipitation from the last year in my dataset
 
-**todo -- update notebook to save image, and insert saved image here
+![precipitation_last_year.jpg](images/precipitation_last_year.jpg)
 
 ### Weather stations
 
-**todo -- save screenshot of this output and insert saved image here
+![weather_station.png](images/weather_station.png)
 
 ### Frequency of tempeture observations
 
-**todo -- update notebook to save image, and insert image here
+![tempeture_frequency.png](images/tempeture_frequency.png)
 
 ### Comparing June and December tempetures
 
-**todo -- save screenshot of this block of code, and corresponding output, and insert saved image here
+![t_test.png](images/t_test.png)
 
