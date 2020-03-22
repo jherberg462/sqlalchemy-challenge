@@ -129,7 +129,11 @@ Within the function defined in step 1 above:
 
 ### Deployment
 
-I deployed my flask app at https://weather-api-492.herokuapp.com 
+I deployed the flask app at https://weather-api-492.herokuapp.com 
+
+### Datasets
+
+1. https://github.com/jherberg462/weather-api-flask-sqlalchemy/blob/master/data/hawaii.sqlite
 
 ## Results
 
